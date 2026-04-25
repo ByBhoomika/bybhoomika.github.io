@@ -59,7 +59,7 @@ flex-wrap:wrap;
 }
 
 .hero-text{
-max-width:600px;
+max-width:650px;
 }
 
 .hero-text h2{
@@ -93,18 +93,9 @@ border:none;
 border-radius:8px;
 color:white;
 font-size:18px;
-margin-right:15px;
 cursor:pointer;
-}
-
-.btn2{
-padding:14px 28px;
-background:transparent;
-border:1px solid white;
-border-radius:8px;
-color:white;
-font-size:18px;
-cursor:pointer;
+text-decoration:none;
+display:inline-block;
 }
 
 .skills-grid{
@@ -157,6 +148,26 @@ color:#999;
 background:#081020;
 margin-top:50px;
 }
+
+@media(max-width:768px){
+nav{
+padding:20px;
+flex-direction:column;
+gap:15px;
+}
+
+section{
+padding:60px 20px;
+}
+
+.hero-text h1{
+font-size:52px;
+}
+
+.projects{
+grid-template-columns:1fr;
+}
+}
 </style>
 </head>
 
@@ -177,12 +188,13 @@ margin-top:50px;
 <h2>Hello, I'm</h2>
 <h1>Bhoomika</h1>
 <p>Aspiring Mechanical Engineer</p>
+
 <small>
-Passionate about engineering, simulations, problem solving and building innovative solutions through design and technology.
+Passionate about engineering, simulations, problem solving and creating innovative solutions through design and technology.
 </small>
 
-<button class="btn">View My Work</button>
-<button class="btn2">Resume</button>
+<a href="#projects" class="btn">View My Work</a>
+
 </div>
 </section>
 
@@ -225,25 +237,27 @@ Passionate about engineering, simulations, problem solving and building innovati
 <div class="projects">
 
 <div class="card">
-<img src="rocket_trajectory.png">
+<img src="rocket_trajectory.png" alt="Rocket Trajectory Graph">
 <h3>Rocket Trajectory Simulation</h3>
-<p>Simulated projectile motion using Python to calculate range, height and path of a rocket launch.</p>
+<p>Simulated projectile motion using Python to calculate range, height and flight path.</p>
 </div>
 
 <div class="card">
-<img src="vehicle_drag_comparison.png">
+<img src="vehicle_drag_comparison.png" alt="Vehicle Drag Comparison">
 <h3>Vehicle Drag Comparison</h3>
-<p>Compared aerodynamic drag force for sports car, sedan, SUV and truck at varying speeds.</p>
+<p>Compared aerodynamic drag force of multiple vehicles at different speeds.</p>
 </div>
 
 </div>
 </section>
 
 <section id="contact">
-<h2 class="title">Contact: bhoomikasingh2604@gmail.com</h2>
+<h2 class="title">Contact</h2>
 
 <div class="card">
 <h3>Open to opportunities and collaboration.</h3>
+<p>Email: bhoomikasingh2604@gmail.com</p>
+<p>Let's build something amazing together.</p>
 </div>
 
 </section>
