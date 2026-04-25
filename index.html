@@ -3,83 +3,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhoomika Portfolio</title>
+<title>Bhoomika | Mechanical Engineer</title>
 
 <style>
-body{
-font-family: Arial, sans-serif;
+*{
 margin:0;
 padding:0;
-background:#111;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#050b18;
 color:white;
-text-align:center;
 }
 
-header{
-padding:60px 20px;
-background:#1f1f1f;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:#081020;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-h1{
-font-size:48px;
-margin:0;
+nav h1{
+color:#00aaff;
+font-size:30px;
 }
 
-p{
-font-size:20px;
-color:#ccc;
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:18px;
 }
 
 section{
-padding:40px 20px;
+padding:80px 60px;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h2{
+font-size:28px;
+color:#00aaff;
+}
+
+.hero-text h1{
+font-size:72px;
+margin:10px 0;
+}
+
+.hero-text p{
+font-size:22px;
+color:#00aaff;
+margin-bottom:20px;
+}
+
+.hero-text small{
+font-size:18px;
+line-height:1.6;
+color:#ccc;
+display:block;
+margin-bottom:30px;
+}
+
+.btn{
+padding:14px 28px;
+background:#00aaff;
+border:none;
+border-radius:8px;
+color:white;
+font-size:18px;
+margin-right:15px;
+cursor:pointer;
+}
+
+.btn2{
+padding:14px 28px;
+background:transparent;
+border:1px solid white;
+border-radius:8px;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+margin-top:40px;
 }
 
 .card{
-max-width:700px;
-margin:auto;
-background:#222;
+background:#0b162d;
 padding:25px;
-border-radius:14px;
-margin-top:20px;
+border-radius:16px;
+text-align:center;
+transition:0.3s;
 }
 
-a{
-color:#00bfff;
-text-decoration:none;
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+color:#00aaff;
+margin-bottom:10px;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+gap:30px;
+margin-top:30px;
+}
+
+.projects img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+h2.title{
+text-align:center;
+font-size:42px;
+margin-bottom:20px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#999;
+background:#081020;
+margin-top:50px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+<h1>Bhoomika</h1>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-text">
+<h2>Hello, I'm</h2>
 <h1>Bhoomika</h1>
 <p>Aspiring Mechanical Engineer</p>
-</header>
+<small>
+Passionate about engineering, simulations, problem solving and building innovative solutions through design and technology.
+</small>
 
-<section>
+<button class="btn">View My Work</button>
+<button class="btn2">Resume</button>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="title">Skills</h2>
+
+<div class="skills-grid">
 
 <div class="card">
-<h2>About Me</h2>
-<p>I am passionate about engineering, innovation, design, and solving real-world problems.</p>
+<h3>CAD</h3>
+<p>3D Modeling & Design</p>
 </div>
 
 <div class="card">
-<h2>Skills</h2>
-<p>CAD • Problem Solving • Mathematics • Python Simulation • Technical Learning</p>
+<h3>Python Simulation</h3>
+<p>Data Analysis & Modeling</p>
 </div>
 
 <div class="card">
-<h2>Projects</h2>
-<p>Projects coming soon...</p>
+<h3>Mechanical Design</h3>
+<p>Engineering Concepts</p>
 </div>
 
 <div class="card">
-<h2>Contact</h2>
-<p>Email: bhoomikasingh2604@gmail.com</p>
+<h3>Mathematics</h3>
+<p>Analytical Problem Solving</p>
+</div>
+
+<div class="card">
+<h3>Problem Solving</h3>
+<p>Optimization & Logic</p>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<img src="rocket_trajectory.png">
+<h3>Rocket Trajectory Simulation</h3>
+<p>Simulated projectile motion using Python to calculate range, height and path of a rocket launch.</p>
+</div>
+
+<div class="card">
+<img src="vehicle_drag_comparison.png">
+<h3>Vehicle Drag Comparison</h3>
+<p>Compared aerodynamic drag force for sports car, sedan, SUV and truck at varying speeds.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 class="title">Contact: bhoomikasingh2604@gmail.com</h2>
+
+<div class="card">
+<h3>Open to opportunities and collaboration.</h3>
 </div>
 
 </section>
+
+<footer>
+© 2026 Bhoomika Portfolio
+</footer>
 
 </body>
 </html>
