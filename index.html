@@ -1,48 +1,45 @@
-import numpy as np
-import matplotlib.pyplot as plt
-
-# ==========================================
-# AERODYNAMIC DRAG SIMULATION - PORTFOLIO
-# ==========================================
-
-# Constants
-rho = 1.225   # Air density (kg/m^3)
-A = 1.0       # Frontal area (m^2)
-
-# Speed range (0 to 50 m/s)
-speeds = np.linspace(0, 50, 300)
-
-# Drag coefficients
-shapes = {
-    "Cube": 1.05,
-    "Sphere": 0.47,
-    "Sedan Car": 0.28,
-    "Streamlined Body": 0.15
-}
-
-# Create graph
-plt.figure(figsize=(12,7))
-
-# Plot each line
-for shape, Cd in shapes.items():
-    drag_force = 0.5 * rho * speeds**2 * Cd * A
-    plt.plot(speeds, drag_force, linewidth=3, label=shape)
-
-# Styling
-plt.title("Aerodynamic Drag Force vs Speed", fontsize=20, fontweight='bold')
-plt.xlabel("Speed (m/s)", fontsize=14)
-plt.ylabel("Drag Force (N)", fontsize=14)
-
-plt.xticks(fontsize=12)
-plt.yticks(fontsize=12)
-
-plt.grid(True, linestyle='--', alpha=0.6)
-plt.legend(fontsize=12, loc='upper left')
-
-plt.tight_layout()
-
-# Save graph image
-plt.savefig("aerodynamicdrag.png", dpi=300)
-
-# Show graph
-plt.show()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athena | Mechanical Engineering Portfolio</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#0f172a;color:#e5e7eb}header{padding:60px 20px;text-align:center;background:#111827}h1{margin:0;font-size:2.4rem}p{color:#cbd5e1}.container{max-width:1000px;margin:auto;padding:24px}.card{background:#1e293b;border-radius:16px;padding:24px;margin:18px 0;box-shadow:0 8px 24px rgba(0,0,0,.25)}h2{margin-top:0;color:#93c5fd}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.btn{display:inline-block;background:#3b82f6;color:white;padding:10px 16px;border-radius:10px;text-decoration:none}img{max-width:100%;border-radius:12px}footer{text-align:center;padding:30px;color:#94a3b8}
+</style>
+</head>
+<body>
+<header>
+<h1>Athena</h1>
+<p>Aspiring Mechanical Engineering Student</p>
+<p>Python • CAD • Engineering Design</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>About Me</h2>
+<p>I build engineering projects using simulation, coding, and CAD design. My focus is solving practical problems through analytical thinking and modern tools.</p>
+</div>
+<div class="card">
+<h2>Featured Project: Aerodynamic Drag Simulation</h2>
+<p>Python-based analysis comparing drag force across multiple shapes using classical fluid mechanics equations.</p>
+<img src="aerodynamicdrag.png" alt="Aerodynamic Drag Graph">
+</div>
+<div class="grid">
+<div class="card">
+<h2>Skills</h2>
+<p>Python<br>Fusion 360 CAD<br>Engineering Analysis<br>Data Visualization</p>
+</div>
+<div class="card">
+<h2>Next Project</h2>
+<p>Upload your CAD project render here next to showcase design capability.</p>
+</div>
+</div>
+<div class="card">
+<h2>GitHub</h2>
+<p>More projects and source code available on my GitHub profile.</p>
+<a class="btn" href="https://github.com/" target="_blank">View GitHub</a>
+</div>
+</div>
+<footer>© 2026 Athena Portfolio</footer>
+</body>
+</html>
