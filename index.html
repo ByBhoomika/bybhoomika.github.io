@@ -1,304 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhoomika | Mechanical Engineer</title>
+import numpy as np
+import matplotlib.pyplot as plt
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+# ==========================================
+# AERODYNAMIC DRAG SIMULATION - PORTFOLIO
+# ==========================================
+
+# Constants
+rho = 1.225   # Air density (kg/m^3)
+A = 1.0       # Frontal area (m^2)
+
+# Speed range (0 to 50 m/s)
+speeds = np.linspace(0, 50, 300)
+
+# Drag coefficients
+shapes = {
+    "Cube": 1.05,
+    "Sphere": 0.47,
+    "Sedan Car": 0.28,
+    "Streamlined Body": 0.15
 }
 
-body{
-font-family:Arial, sans-serif;
-background:#050b18;
-color:white;
-}
+# Create graph
+plt.figure(figsize=(12,7))
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:#081020;
-position:sticky;
-top:0;
-z-index:1000;
-}
+# Plot each line
+for shape, Cd in shapes.items():
+    drag_force = 0.5 * rho * speeds**2 * Cd * A
+    plt.plot(speeds, drag_force, linewidth=3, label=shape)
 
-nav h1{
-color:#00aaff;
-font-size:30px;
-}
+# Styling
+plt.title("Aerodynamic Drag Force vs Speed", fontsize=20, fontweight='bold')
+plt.xlabel("Speed (m/s)", fontsize=14)
+plt.ylabel("Drag Force (N)", fontsize=14)
 
-nav ul{
-display:flex;
-list-style:none;
-gap:30px;
-}
+plt.xticks(fontsize=12)
+plt.yticks(fontsize=12)
 
-nav ul li a{
-color:white;
-text-decoration:none;
-font-size:18px;
-}
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.legend(fontsize=12, loc='upper left')
 
-section{
-padding:80px 60px;
-}
+plt.tight_layout()
 
-.hero-text{
-max-width:700px;
-}
+# Save graph image
+plt.savefig("aerodynamicdrag.png", dpi=300)
 
-.hero-text h2{
-font-size:28px;
-color:#00aaff;
-}
-
-.hero-text h1{
-font-size:72px;
-margin:10px 0;
-}
-
-.hero-text p{
-font-size:22px;
-color:#00aaff;
-margin-bottom:20px;
-}
-
-.hero-text small{
-font-size:18px;
-line-height:1.7;
-color:#ccc;
-display:block;
-margin-bottom:30px;
-}
-
-.btn{
-padding:14px 28px;
-background:#00aaff;
-border:none;
-border-radius:8px;
-color:white;
-font-size:18px;
-text-decoration:none;
-display:inline-block;
-}
-
-h2.title{
-text-align:center;
-font-size:42px;
-margin-bottom:30px;
-}
-
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-}
-
-.card{
-background:#0b162d;
-padding:25px;
-border-radius:16px;
-transition:0.3s;
-box-shadow:0 0 0 transparent;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 18px rgba(0,170,255,0.35);
-}
-
-.card h3{
-color:#00aaff;
-margin-bottom:12px;
-}
-
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
-gap:30px;
-}
-
-.project-card{
-background:#0b162d;
-padding:20px;
-border-radius:18px;
-transition:0.3s;
-}
-
-.project-card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px rgba(0,170,255,0.35);
-}
-
-.project-card img{
-width:100%;
-border-radius:14px;
-margin-bottom:18px;
-transition:0.3s;
-cursor:pointer;
-}
-
-.project-card img:hover{
-transform:scale(1.02);
-}
-
-.project-card h3{
-color:#00aaff;
-margin-bottom:12px;
-}
-
-.project-card p{
-color:#d0d0d0;
-line-height:1.6;
-}
-
-.contact-card{
-max-width:700px;
-margin:auto;
-text-align:center;
-}
-
-footer{
-text-align:center;
-padding:30px;
-color:#888;
-background:#081020;
-margin-top:50px;
-}
-
-@media(max-width:768px){
-
-nav{
-flex-direction:column;
-padding:20px;
-gap:15px;
-}
-
-section{
-padding:60px 20px;
-}
-
-.hero-text h1{
-font-size:52px;
-}
-
-.projects{
-grid-template-columns:1fr;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-<h1>Bhoomika</h1>
-
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-<section id="home">
-<div class="hero-text">
-<h2>Hello, I'm</h2>
-<h1>Bhoomika</h1>
-<p>Aspiring Mechanical Engineer</p>
-
-<small>
-Passionate about engineering, simulation, design, and solving real-world technical challenges.
-</small>
-
-<a href="#projects" class="btn">View My Work</a>
-</div>
-</section>
-
-<section id="skills">
-<h2 class="title">Skills</h2>
-
-<div class="skills-grid">
-
-<div class="card">
-<h3>CAD</h3>
-<p>3D Modeling & Design</p>
-</div>
-
-<div class="card">
-<h3>Python Simulation</h3>
-<p>Data Analysis & Modeling</p>
-</div>
-
-<div class="card">
-<h3>Mechanical Design</h3>
-<p>Engineering Concepts</p>
-</div>
-
-<div class="card">
-<h3>Mathematics</h3>
-<p>Analytical Thinking</p>
-</div>
-
-<div class="card">
-<h3>Problem Solving</h3>
-<p>Optimization & Logic</p>
-</div>
-
-</div>
-</section>
-
-<section id="projects">
-<h2 class="title">Projects</h2>
-
-<div class="projects">
-
-<div class="project-card">
-<img src="rocket_trajectory.png" alt="Rocket Trajectory">
-<h3>Rocket Trajectory Simulation</h3>
-<p>
-Developed a Python-based projectile motion model to calculate range, peak height, and flight path using physics equations.
-</p>
-</div>
-
-<div class="project-card">
-<img src="vehicle_drag_comparison.png" alt="Vehicle Drag Comparison">
-<h3>Vehicle Drag Comparison</h3>
-<p>
-Analyzed aerodynamic drag forces across multiple vehicle types at varying speeds using Python simulation.
-</p>
-</div>
-
-</div>
-</section>
-
-<section id="contact">
-<h2 class="title">Contact</h2>
-
-<div class="card contact-card">
-<h3>Open to opportunities and collaboration</h3>
-<p>Email: bhoomikasingh2604@gmail.com</p>
-</div>
-
-</section>
-
-<footer>
-© 2026 Bhoomika Portfolio
-</footer>
-
-</body>
-</html>
+# Show graph
+plt.show()
